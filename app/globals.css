@@ -1,0 +1,360 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Light Theme - Default */
+:root,
+:root[data-theme='light'] {
+  /* Backgrounds */
+  --bg-primary: #F5F5F5;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-inner: #F8F9FA;
+  --bg-sidebar: #FFFFFF;
+  --bg-navbar: #FFFFFF;
+  --bg-input: #F0F2F5;
+  --bg-progress-track: #E9ECEF;
+  --bg-hover: #F5F5F5;
+  --bg-calendar-card: #FFFFFF;
+  --bg-calendar-inner: #F0F2F5;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --text-label: #6B7280;
+
+  /* Borders */
+  --border-color: #E5E7EB;
+  --border-strong: #D1D5DB;
+
+  /* Cards */
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06);
+
+  /* Progress Bars */
+  --progress-track: #E9ECEF;
+  --progress-equities: #22C55E;
+  --progress-mutual-funds: #3B82F6;
+  --progress-fixed-income: #A855F7;
+  --progress-crypto: #F97316;
+
+  /* Score Badges */
+  --badge-health: #DCFCE7;
+  --badge-health-text: #15803D;
+  --badge-risk: #FEF9C3;
+  --badge-risk-text: #854D0E;
+  --badge-diversification: #DBEAFE;
+  --badge-diversification-text: #1D4ED8;
+
+  /* Economic Calendar */
+  --cal-forecast-bg: #EFF6FF;
+  --cal-forecast-text: #1D4ED8;
+  --cal-previous-bg: #FFFBEB;
+  --cal-previous-text: #92400E;
+  --cal-actual-bg: #F0FDF4;
+  --cal-actual-text: #15803D;
+  --cal-high-badge: #FEE2E2;
+  --cal-high-text: #DC2626;
+
+  /* Reference Design - Icon Colors */
+  /* Green icons (growth, trending up, gain) */
+  --icon-green-bg: #DCFCE7;
+  --icon-green-text: #16A34A;
+  
+  /* Blue icons (info, analytics, time) */
+  --icon-blue-bg: #DBEAFE;
+  --icon-blue-text: #2563EB;
+  
+  /* Amber/Gold icons (star, warning, senior) */
+  --icon-amber-bg: #FEF3C7;
+  --icon-amber-text: #D97706;
+  
+  /* Orange icons (fire, trending hot) */
+  --icon-orange-bg: #FFEDD5;
+  --icon-orange-text: #EA580C;
+  
+  /* Red/Pink icons (losers, decline) */
+  --icon-red-bg: #FEE2E2;
+  --icon-red-text: #DC2626;
+  
+  /* Purple icons (AI, strategy, brain) */
+  --icon-purple-bg: #EDE9FE;
+  --icon-purple-text: #7C3AED;
+  
+  /* Gray/Slate icons (neutral, security) */
+  --icon-gray-bg: #F1F5F9;
+  --icon-gray-text: #475569;
+
+  /* Reference Design - Page Background */
+  --page-bg: #F5F5F5;
+  
+  /* Reference Design - Card styling */
+  --card-border: #E5E7EB;
+  --text-dark: #111827;
+
+  /* Legacy variables for compatibility */
+  --background: #FFFFFF;
+  --foreground: #0D1117;
+  --card: #FFFFFF;
+  --card-foreground: #0D1117;
+  --border: #E2E8F0;
+  --muted: #F3F4F6;
+  --muted-foreground: #718096;
+  --accent: #2563EB;
+}
+
+/* Dark Theme - Professional Navy */
+:root[data-theme='dark'],
+.dark {
+  /* Backgrounds */
+  --bg-primary: #0D1117;
+  --bg-secondary: #161B22;
+  --bg-card: #21262D;
+  --bg-card-inner: #2D333B;
+  --bg-sidebar: #161B22;
+  --bg-navbar: #0D1117;
+  --bg-input: #21262D;
+  --bg-progress-track: #30363D;
+  --bg-hover: #2D333B;
+  --bg-calendar-card: #21262D;
+  --bg-calendar-inner: #2D333B;
+
+  /* Text */
+  --text-primary: #F0F6FC;
+  --text-secondary: #8B949E;
+  --text-muted: #6E7681;
+  --text-label: #8B949E;
+
+  /* Borders */
+  --border-color: #30363D;
+  --border-strong: #444C56;
+
+  /* Cards */
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.4);
+
+  /* Progress Bars */
+  --progress-track: #30363D;
+  --progress-equities: #22C55E;
+  --progress-mutual-funds: #3B82F6;
+  --progress-fixed-income: #A855F7;
+  --progress-crypto: #F97316;
+
+  /* Score Badges */
+  --badge-health: #14532D;
+  --badge-health-text: #86EFAC;
+  --badge-risk: #713F12;
+  --badge-risk-text: #FDE68A;
+  --badge-diversification: #1E3A5F;
+  --badge-diversification-text: #93C5FD;
+
+  /* Dark Mode - Icon Colors */
+  --icon-green-bg: #14532D;
+  --icon-green-text: #4ADE80;
+  --icon-blue-bg: #1E3A5F;
+  --icon-blue-text: #60A5FA;
+  --icon-amber-bg: #451A03;
+  --icon-amber-text: #FCD34D;
+  --icon-orange-bg: #451A03;
+  --icon-orange-text: #FCD34D;
+  --icon-red-bg: #450A0A;
+  --icon-red-text: #F87171;
+  --icon-purple-bg: #2E1065;
+  --icon-purple-text: #A78BFA;
+  --icon-gray-bg: #1E293B;
+  --icon-gray-text: #94A3B8;
+  --page-bg: #0D1117;
+  --card-border: #30363D;
+  --text-dark: #F0F6FC;
+
+  /* Economic Calendar */
+  --cal-forecast-bg: #1E3A5F;
+  --cal-forecast-text: #93C5FD;
+  --cal-previous-bg: #3F2D0A;
+  --cal-previous-text: #FDE68A;
+  --cal-actual-bg: #14532D;
+  --cal-actual-text: #86EFAC;
+  --cal-high-badge: #450A0A;
+  --cal-high-text: #FCA5A5;
+
+  /* Legacy variables for compatibility */
+  --background: #0D1117;
+  --foreground: #F0F6FC;
+  --card: #21262D;
+  --card-foreground: #F0F6FC;
+  --border: #30363D;
+  --muted: #2D333B;
+  --muted-foreground: #8B949E;
+  --accent: #00C851;
+}
+
+/* System mode detection */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    /* Apply dark theme variables */
+    --bg-primary: #0D1117;
+    --bg-secondary: #161B22;
+    --bg-card: #21262D;
+    --bg-card-inner: #2D333B;
+    --bg-sidebar: #161B22;
+    --bg-navbar: #0D1117;
+    --bg-input: #21262D;
+    --bg-progress-track: #30363D;
+    --bg-hover: #2D333B;
+    --bg-calendar-card: #21262D;
+    --bg-calendar-inner: #2D333B;
+    --text-primary: #F0F6FC;
+    --text-secondary: #8B949E;
+    --text-muted: #6E7681;
+    --text-label: #8B949E;
+    --border-color: #30363D;
+    --border-strong: #444C56;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    --progress-track: #30363D;
+    --badge-health: #14532D;
+    --badge-health-text: #86EFAC;
+    --badge-risk: #713F12;
+    --badge-risk-text: #FDE68A;
+    --badge-diversification: #1E3A5F;
+    --badge-diversification-text: #93C5FD;
+    --cal-forecast-bg: #1E3A5F;
+    --cal-forecast-text: #93C5FD;
+    --cal-previous-bg: #3F2D0A;
+    --cal-previous-text: #FDE68A;
+    --cal-actual-bg: #14532D;
+    --cal-actual-text: #86EFAC;
+    --cal-high-badge: #450A0A;
+    --cal-high-text: #FCA5A5;
+    --background: #0D1117;
+    --foreground: #F0F6FC;
+    --card: #21262D;
+    --card-foreground: #F0F6FC;
+    --border: #30363D;
+    --muted: #2D333B;
+    --muted-foreground: #8B949E;
+    --accent: #00C851;
+  }
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gain: var(--gain);
+  --color-gain-foreground: var(--gain-foreground);
+  --color-loss: var(--loss);
+  --color-loss-foreground: var(--loss-foreground);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+}
+
+/* System mode detection */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    /* Apply dark theme colors */
+    --background: #0D1117;
+    --foreground: #F0F6FC;
+    --page-background: #0D1117;
+    --card: #21262D;
+    --card-foreground: #F0F6FC;
+    --card-border: #30363D;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --navbar-background: #0D1117;
+    --navbar-foreground: #F0F6FC;
+    --navbar-border: #30363D;
+    --sidebar: #161B22;
+    --sidebar-foreground: #8B949E;
+    --sidebar-primary: #1A73E8;
+    --sidebar-primary-foreground: #F0F6FC;
+    --sidebar-accent: #21262D;
+    --sidebar-accent-foreground: #F0F6FC;
+    --sidebar-border: #30363D;
+    --sidebar-ring: #00C851;
+    --popover: #161B22;
+    --popover-foreground: #F0F6FC;
+    --primary: #1A73E8;
+    --primary-foreground: #F0F6FC;
+    --secondary: #21262D;
+    --secondary-foreground: #F0F6FC;
+    --muted: #30363D;
+    --muted-foreground: #8B949E;
+    --accent: #00C851;
+    --accent-foreground: #0D1117;
+    --destructive: #FF3B30;
+    --destructive-foreground: #F0F6FC;
+    --border: #30363D;
+    --input: #0D1117;
+    --input-border: #30363D;
+    --input-foreground: #F0F6FC;
+    --ring: #00C851;
+    --chart-1: #00C851;
+    --chart-2: #FF3B30;
+    --chart-3: #1A73E8;
+    --chart-4: #FFB81C;
+    --chart-5: #7C3AED;
+    --gain: #00C851;
+    --gain-foreground: #0D1117;
+    --loss: #FF3B30;
+    --loss-foreground: #F0F6FC;
+    --warning: #FFB81C;
+    --info: #1A73E8;
+    --calendar-inner-background: #2D333B;
+    --calendar-inner-foreground: #F0F6FC;
+    --calendar-label-color: #8B949E;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 box-border;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out, border-color 300ms ease-in-out;
+  }
+  
+  html {
+    color-scheme: light;
+  }
+  
+  html[data-theme='dark'],
+  html.dark {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
