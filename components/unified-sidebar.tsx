@@ -247,39 +247,60 @@ export function UnifiedSidebar() {
           return (
             <div key={section.id} className="space-y-1">
               {/* Section Header */}
-              <button
-                onClick={() => {
-                  if (section.href) {
-                    router.push(section.href)
-                    return
-                  }
-                  if (isOpen) {
-                    toggleSection(section.id)
-                  }
-                }}
-                className={cn(
-                  'w-full flex items-center px-3 py-2.5 rounded-lg transition-all duration-200',
-                  isOpen ? 'justify-between' : 'justify-center',
-                  'text-sm font-semibold',
-                  hasActiveItem || isExpanded
-                    ? 'bg-sidebar-primary/15 text-sidebar-primary border border-sidebar-primary/30'
-                    : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
-                )}
-                title={isOpen ? undefined : section.label}
-              >
-                <div className={cn('flex items-center', isOpen && 'gap-2')}>
-                  <span className="text-sidebar-primary flex-shrink-0">{section.icon}</span>
-                  {isOpen && <span className="truncate">{section.label}</span>}
-                </div>
-                {isOpen && (
-                  <ChevronDown
+              <div className={cn(
+                'w-full flex items-center px-3 py-2.5 rounded-lg transition-all duration-200',
+                isOpen ? 'justify-between' : 'justify-center',
+                'text-sm font-semibold',
+                hasActiveItem || isExpanded
+                  ? 'bg-sidebar-primary/15 text-sidebar-primary border border-sidebar-primary/30'
+                  : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
+              )}>
+                {/* Label + Icon - Navigates to href if present, or toggles if no href and sidebar open */}
+                {section.href ? (
+                  <Link
+                    href={section.href}
                     className={cn(
-                      'w-4 h-4 transition-transform duration-200 flex-shrink-0',
-                      isExpanded ? 'rotate-180' : ''
+                      'flex items-center flex-1',
+                      isOpen && 'gap-2'
                     )}
-                  />
+                    title={isOpen ? undefined : section.label}
+                  >
+                    <span className="text-sidebar-primary flex-shrink-0">{section.icon}</span>
+                    {isOpen && <span className="truncate">{section.label}</span>}
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => {
+                      if (isOpen) {
+                        toggleSection(section.id)
+                      }
+                    }}
+                    className={cn('flex items-center flex-1')}
+                    title={isOpen ? undefined : section.label}
+                  >
+                    <span className="text-sidebar-primary flex-shrink-0">{section.icon}</span>
+                    {isOpen && <span className="truncate">{section.label}</span>}
+                  </button>
                 )}
-              </button>
+                {/* Chevron Button - Only toggles expand/collapse */}
+                {isOpen && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleSection(section.id)
+                    }}
+                    className="flex-shrink-0"
+                    title="Toggle section"
+                  >
+                    <ChevronDown
+                      className={cn(
+                        'w-4 h-4 transition-transform duration-200',
+                        isExpanded ? 'rotate-180' : ''
+                      )}
+                    />
+                  </button>
+                )}
+              </div>
 
               {/* Section Items - Only show when open and expanded */}
               {isOpen && isExpanded && (
