@@ -171,6 +171,9 @@ export function PremiumHeader() {
 
                     {/* Additional Links */}
                     <div className="border-t border-slate-800 pt-4 flex flex-col gap-2">
+                      <Link href="/about" className="px-3 py-2 text-sm text-slate-300 hover:text-white">
+                        About
+                      </Link>
                       <Link href="/research" className="px-3 py-2 text-sm text-slate-300 hover:text-white">
                         Research
                       </Link>
