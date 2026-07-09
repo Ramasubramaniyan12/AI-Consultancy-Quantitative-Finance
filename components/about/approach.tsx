@@ -30,37 +30,39 @@ const steps = [
 
 export function Approach() {
   return (
-    <section className="py-12 md:py-20 border-t border-border">
-      <SectionHeading eyebrow="Our Process" title="Our Approach" className="mb-12" />
+    <section className="py-16 md:py-24 border-t border-border">
+      <SectionHeading eyebrow="Our Process" title="Our Approach" className="mb-16" />
 
       <div className="relative">
         {/* Desktop connector line */}
-        <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-border via-border to-border" />
+        <div className="hidden md:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
           {steps.map((step, index) => {
             const Icon = step.icon
             return (
-              <div key={step.title} className="flex flex-col items-start">
+              <div key={step.title} className="flex flex-col items-center md:items-start text-center md:text-left">
                 {/* Step circle */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-16 h-16 rounded-full bg-card border-2 border-border flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-accent" />
+                <div className="flex justify-center md:justify-start w-full mb-6">
+                  <div className="w-20 h-20 rounded-full bg-card border-2 border-accent/20 flex items-center justify-center flex-shrink-0 group hover:border-accent/50 hover:bg-card/60 transition-all duration-300">
+                    <Icon className="w-8 h-8 text-accent" />
                   </div>
-                  <span className="hidden md:block font-mono text-xs font-semibold text-muted-foreground">
-                    Step {step.number}
-                  </span>
                 </div>
+
+                {/* Step number */}
+                <span className="font-mono text-xs font-bold text-accent uppercase tracking-widest mb-3">
+                  Step {step.number}
+                </span>
 
                 {/* Content */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">{step.title}</h3>
+                  <h3 className="font-bold text-lg text-foreground">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
 
                 {/* Mobile connector */}
                 {index < steps.length - 1 && (
-                  <div className="md:hidden w-0.5 h-8 bg-border my-4" />
+                  <div className="md:hidden w-0.5 h-8 bg-border/50 my-6" />
                 )}
               </div>
             )

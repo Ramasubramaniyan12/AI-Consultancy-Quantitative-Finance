@@ -44,19 +44,21 @@ const services = [
 
 export function WhatWeDo() {
   return (
-    <section className="py-12 md:py-20 border-t border-border">
-      <SectionHeading eyebrow="Our Services" title="What We Do" className="mb-8" />
+    <section className="py-16 md:py-24 border-t border-border" id="what-we-do">
+      <SectionHeading eyebrow="Our Services" title="What We Do" className="mb-12" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => {
           const Icon = service.icon
           return (
-            <Card key={service.title} className="border border-border bg-card hover:bg-card/80 transition-colors">
-              <CardHeader>
-                <div className="flex items-start gap-3">
-                  <Icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
+            <Card key={service.title} className="border border-border bg-card hover:shadow-md hover:bg-card/70 transition-all duration-300 group">
+              <CardHeader className="pb-3">
+                <div className="flex items-start gap-4 mb-2">
+                  <div className="p-2.5 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                    <Icon className="w-5 h-5 text-accent flex-shrink-0" />
+                  </div>
                 </div>
+                <CardTitle className="text-lg leading-tight">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
